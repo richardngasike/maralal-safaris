@@ -47,23 +47,34 @@
 
 .socials {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;           /* increased gap a bit for better touch targets */
 }
 
-.socials a {
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
   background: rgba(139, 0, 0, 0.6);
   color: #FFD700;
-  text-decoration: none;
-  padding: 0.35rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  transition: all 0.2s;
+  border-radius: 50%;           /* circle shape – looks better with icons */
   border: 1px solid rgba(139, 0, 0, 0.8);
+  font-size: 1.35rem;           /* icon size */
+  transition: all 0.25s ease;
+  text-decoration: none;
 }
 
-.socials a:hover {
+.socialLink:hover {
   background: #8B0000;
-  transform: translateY(-2px);
+  color: #fff;                  /* white on hover for contrast */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(139, 0, 0, 0.3);
+}
+
+/* Optional: make WhatsApp icon slightly larger or different if desired */
+.socialLink[href*="wa.me"] {
+  font-size: 1.45rem;           /* slightly bigger WhatsApp icon – common pattern */
 }
 
 .col h4 {

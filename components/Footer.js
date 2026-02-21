@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa'; // ← added imports
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -14,11 +15,41 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.logo}>Maralal Safaris SACCO</div>
-            <p>Your trusted transport partner connecting Nairobi to Samburu and beyond since 1998. Safety, comfort, and reliability on every journey.</p>
+            <p>
+              Your trusted transport partner connecting Nairobi to Samburu and beyond since 1998. 
+              Safety, comfort, and reliability on every journey.
+            </p>
+
             <div className={styles.socials}>
-              <a href="#" aria-label="Facebook">Facebook</a>
-              <a href="#" aria-label="Twitter">Twitter</a>
-              <a href="#" aria-label="WhatsApp">WhatsApp</a>
+              <a 
+                href="https://facebook.com/maralalsafaris" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook"
+                className={styles.socialLink}
+              >
+                <FaFacebookF />
+              </a>
+
+              <a 
+                href="https://twitter.com/maralalsafaris" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Twitter"
+                className={styles.socialLink}
+              >
+                <FaTwitter />
+              </a>
+
+              <a 
+                href="https://wa.me/254727919990" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="WhatsApp"
+                className={styles.socialLink}
+              >
+                <FaWhatsapp />
+              </a>
             </div>
           </div>
 
