@@ -13,7 +13,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brand}>
-            <div className={styles.logo}>🚌 Maralal Safaris SACCO</div>
+            <div className={styles.logo}>Maralal Safaris SACCO</div>
             <p>Your trusted transport partner connecting Nairobi to Samburu and beyond since 1998. Safety, comfort, and reliability on every journey.</p>
             <div className={styles.socials}>
               <a href="#" aria-label="Facebook">Facebook</a>
@@ -53,7 +53,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p>© {new Date().getFullYear()} Maralal Safaris SACCO. All rights reserved.</p>
-          <p>Licensed by NTSA Kenya | Reg. No. SACCO/2024/0871</p>
+          <p>Licensed by NTSA Kenya</p>
         </div>
       </div>
     </footer>

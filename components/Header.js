@@ -34,7 +34,7 @@ export default function Header() {
       </div>
       <div className={styles.mainNav}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🚌</span>
+          <span className={styles.logoIcon}></span>
           <div>
             <span className={styles.logoTitle}>Maralal Safaris</span>
             <span className={styles.logoSub}>SACCO — Est. 1998</span>
