@@ -45,7 +45,7 @@ export default function Footer() {
           <div className={styles.col}>
             <h4>Contact</h4>
             <p>📍 Maralal Bus Terminal<br />Ronald Ngala St, Nairobi CBD</p>
-            <p>📞 +254 700 123 456<br />+254 733 456 789</p>
+            <p>📞 +254 727 919 990<br />+254 727 919 990</p>
             <p>✉️ info@maralalsafaris.co.ke</p>
             <p>🕐 Daily: 5:00AM – 10:00PM</p>
           </div>

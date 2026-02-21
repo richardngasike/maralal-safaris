@@ -55,7 +55,7 @@ export default function Fares() {
               </ul>
             </div>
             <div className={styles.policyCard}>
-              <h3>📦 Cargo Rates</h3>
+              <h3>Cargo Rates</h3>
               <ul>
                 <li>Charged per kg as listed</li>
                 <li>Items over 100kg: call for quote</li>

@@ -21,8 +21,10 @@ export default function Header() {
     { href: '/schedule', label: 'Schedule' },
     { href: '/booking', label: 'Book Ticket' },
     { href: '/fleet', label: 'Our Fleet' },
+    { href: '/cargo', label: 'Cargo' },
     { href: '/about', label: 'About Us' },
     { href: '/contact', label: 'Contact' },
+    { href: '/gallery', label: 'Gallery' },
   ];
 
   return (
