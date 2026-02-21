@@ -27,20 +27,12 @@ export default function Booking() {
             </div>
             <div className={styles.bookingSidebar}>
               <div className={styles.sideCard}>
-                <h3>🔒 Secure Booking</h3>
+                <h3> Secure Booking</h3>
                 <p>Your personal data is protected with 256-bit SSL encryption.</p>
               </div>
               <div className={styles.sideCard}>
                 <h3>📱 M-Pesa Payment</h3>
                 <p>Pay via M-Pesa Paybill: <strong>123456</strong><br />Account: Your booking reference</p>
-              </div>
-              <div className={styles.sideCard}>
-                <h3>🔄 Cancellation Policy</h3>
-                <ul>
-                  <li>2+ hours before: Full refund</li>
-                  <li>1–2 hours before: 50% refund</li>
-                  <li>Under 1 hour: No refund</li>
-                </ul>
               </div>
               <div className={styles.sideCard}>
                 <h3>📞 Need Help?</h3>

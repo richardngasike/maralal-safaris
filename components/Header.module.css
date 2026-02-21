@@ -8,8 +8,8 @@
 }
 
 .topBar {
-  background: #8B0000;
-  color: #FFD700;
+  background: red;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -21,7 +21,7 @@
 }
 
 .mainNav {
-  background: rgba(15, 25, 50, 0.97);
+  background: rgba(0, 43, 111, 0.97);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
