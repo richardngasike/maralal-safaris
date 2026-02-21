@@ -98,6 +98,7 @@ export default function Fleet() {
           <h2 className="section-title">Our Vehicles</h2>
           <p className="section-subtitle">All vehicles undergo NTSA-mandated inspection every 6 months.</p>
           <div className="gold-divider"></div>
+
           <div className={styles.fleetGrid}>
             {FLEET.map((bus, i) => (
               <div key={i} className={`${styles.busCard} ${styles[bus.type]}`}>
@@ -112,20 +113,14 @@ export default function Fleet() {
                 </div>
 
                 <div className={styles.busVisual}>
-                  <div className={styles.busIllustration}>
-                    <div className={styles.busBody}>
-                      <div className={styles.busWindows}>
-                        {Array.from({ length: 6 }).map((_, w) => (
-                          <div key={w} className={styles.window}></div>
-                        ))}
-                      </div>
-                      <div className={styles.busDoor}></div>
-                    </div>
-                    <div className={styles.busWheels}>
-                      <div className={styles.wheel}></div>
-                      <div className={styles.wheel}></div>
-                    </div>
-                  </div>
+                  <img
+                    src={`/gallery/image${i + 1}.jpeg`}
+                    alt={`${bus.name} - ${bus.model}`}
+                    className={styles.busImage}
+                    width={320}
+                    height={180}
+                    loading="lazy"
+                  />
                 </div>
 
                 <div className={styles.busSpecs}>
