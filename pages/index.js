@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 
 const STATS = [
@@ -8,29 +9,71 @@ const STATS = [
   { num: '12', label: 'Modern Buses' },
   { num: '8', label: 'Daily Departures' },
 ];
-
 const FEATURES = [
   { icon: '🛡️', title: 'NTSA Certified', desc: 'All vehicles fully licensed and compliant with Kenya traffic regulations.' },
   { icon: '📱', title: 'M-Pesa Booking', desc: 'Book and pay conveniently via M-Pesa or at any of our terminals.' },
   { icon: '❄️', title: 'Air Conditioned', desc: 'Travel in comfort with climate-controlled express coaches.' },
-  { icon: '📦', title: 'Cargo Services', desc: 'Reliable goods transport across all our routes at competitive rates.' },
-  { icon: '🕐', title: 'Punctual', desc: 'We respect your time. Strict departure schedules, monitored in real-time.' },
-  { icon: '🎓', title: 'Student Discounts', desc: '10% discount for students with valid university or college ID.' },
+  { icon: '📦', title: 'Cargo Services', desc: 'Reliable goods transport across all our routes at affordable rates.' },
+  { icon: '🔌', title: 'Phone Charging', desc: 'Worried your phone is shutting down? dont worry Maralal Safaris git you sorted.' },
+  { icon: '🛜', title: 'Free Wifi', desc: 'Enjoy strong WIFI connection making your journey amazing.' },
 ];
-
 const TESTIMONIALS = [
   { name: 'Grace Wanjiru', role: 'Regular Commuter, Nyeri', text: 'I travel Nairobi-Nyeri every month and Maralal Safaris is the most reliable. Clean buses, friendly staff, always on time.' },
   { name: 'John Leitoro', role: 'Trader, Maralal', text: 'Their cargo service saved my business. Goods arrive safely and the rates are the best on this route.' },
   { name: 'Dr. Amina Hassan', role: 'Tourist, Samburu', text: 'Excellent service from Nairobi to Samburu. The journey was comfortable and the crew was professional.' },
 ];
-
 const NEWS = [
   { date: 'Feb 2025', title: 'New Nakuru Route Launched', desc: 'We are excited to announce our expanded service now connecting Samburu to Nakuru directly.' },
   { date: 'Jan 2025', title: 'Fleet Upgrade Complete', desc: 'Three new modern 45-seater coaches have been added to our express fleet.' },
   { date: 'Dec 2024', title: 'Holiday Schedule 2024', desc: 'Special festive season departures added. Book early to secure your seat.' },
 ];
 
+const HERO_SLIDES = [
+  {
+    image: '/bus1.jpeg',
+    badge: '🌍 Serving Northern Kenya Since 1998',
+    titleLine1: 'Welcome to',
+    titleGold: 'Maralal Safaris',
+    subtitle: 'Your trusted SACCO for safe, comfortable travel between Nairobi, Samburu County, and Nakuru. Over 25 years of reliable service.',
+  },
+  {
+    image: '/image3.jpeg',
+    badge: '🚌 Modern Fleet, Maximum Comfort',
+    titleLine1: 'Travel in',
+    titleGold: 'Style & Safety',
+    subtitle: 'Experience Kenya\'s finest landscapes aboard our air-conditioned express coaches with Wi-Fi, phone charging, and a professional crew on every journey.',
+  },
+  {
+    image: '/image2.jpeg',
+    badge: '📦 Reliable Cargo & Passenger Services',
+    titleLine1: 'Your Goods,',
+    titleGold: 'Our Responsibility',
+    subtitle: 'From personal parcels to business cargo — we deliver safely and affordably across all our routes, every single day.',
+  },
+];
+
 export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleSlideChange((activeSlide + 1) % HERO_SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [activeSlide]);
+
+  function handleSlideChange(index) {
+    if (index === activeSlide) return;
+    setFading(true);
+    setTimeout(() => {
+      setActiveSlide(index);
+      setFading(false);
+    }, 500);
+  }
+
+  const slide = HERO_SLIDES[activeSlide];
+
   return (
     <>
       <Head>
@@ -40,21 +83,26 @@ export default function Home() {
 
       {/* Hero */}
       <section className={styles.hero}>
+        {/* Carousel backgrounds — all stacked, only active one visible */}
         <div className={styles.heroBg}>
+          {HERO_SLIDES.map((s, i) => (
+            <div
+              key={i}
+              className={`${styles.carouselSlide} ${i === activeSlide ? styles.carouselSlideActive : ''}`}
+              style={{ backgroundImage: `url('${s.image}')` }}
+            />
+          ))}
           <div className={styles.heroBgOverlay}></div>
-          <div className={styles.busScene}></div>
         </div>
 
-        <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>🌍 Serving Northern Kenya Since 1998</div>
+        {/* Content — fades on slide change */}
+        <div className={`${styles.heroContent} ${fading ? styles.heroContentFading : ''}`}>
+          <div className={styles.heroBadge}>{slide.badge}</div>
           <h1 className={styles.heroTitle}>
-            Welcome to<br />
-            <span className={styles.heroTitleGold}>Maralal Safaris</span>
+            {slide.titleLine1}<br />
+            <span className={styles.heroTitleGold}>{slide.titleGold}</span>
           </h1>
-          <p className={styles.heroSubtitle}>
-            Your trusted SACCO for safe, comfortable travel between Nairobi, 
-            Samburu County, and Nakuru. Over 25 years of reliable service.
-          </p>
+          <p className={styles.heroSubtitle}>{slide.subtitle}</p>
 
           <div className={styles.heroSearch}>
             <div className={styles.searchBox}>
@@ -94,6 +142,34 @@ export default function Home() {
             <Link href="/fares" className={styles.heroLinkSecondary}>Check Fares</Link>
             <Link href="/routes" className={styles.heroLinkSecondary}>Our Routes</Link>
           </div>
+        </div>
+
+        {/* Carousel controls */}
+        <button
+          className={`${styles.carouselArrow} ${styles.carouselArrowLeft}`}
+          onClick={() => handleSlideChange((activeSlide - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+        <button
+          className={`${styles.carouselArrow} ${styles.carouselArrowRight}`}
+          onClick={() => handleSlideChange((activeSlide + 1) % HERO_SLIDES.length)}
+          aria-label="Next slide"
+        >
+          ›
+        </button>
+
+        {/* Dot indicators */}
+        <div className={styles.carouselDots}>
+          {HERO_SLIDES.map((_, i) => (
+            <button
+              key={i}
+              className={`${styles.carouselDot} ${i === activeSlide ? styles.carouselDotActive : ''}`}
+              onClick={() => handleSlideChange(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
 
         <div className={styles.heroScroll}>
