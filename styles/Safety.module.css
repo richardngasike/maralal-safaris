@@ -1,0 +1,136 @@
+.safetyContent {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.safetyMain p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.safetyMain h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #0f1932;
+  margin: 2rem 0 0.8rem;
+  padding-left: 0.8rem;
+  border-left: 4px solid #8B0000;
+}
+
+.policyList {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.policyList li {
+  padding: 0.45rem 0 0.45rem 1.2rem;
+  color: #555;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0ede6;
+  position: relative;
+}
+
+.policyList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #8B0000;
+}
+
+.emergencyList {
+  padding-left: 1.5rem;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.emergencyList strong { color: #8B0000; }
+
+/* Sidebar */
+.safetySidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 120px;
+}
+
+.certCard {
+  background: #0f1932;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.certCard h3 {
+  color: #FFD700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,215,0,0.2);
+}
+
+.cert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #aab;
+  font-size: 0.88rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.emergencyCard {
+  background: #8B0000;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.emergencyCard h3 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.emergContact {
+  margin-bottom: 0.8rem;
+}
+
+.emergContact strong {
+  display: block;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.emergContact a {
+  color: #FFD700;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .safetyContent {
+    grid-template-columns: 1fr;
+  }
+  .safetySidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .safetySidebar {
+    grid-template-columns: 1fr;
+  }
+}

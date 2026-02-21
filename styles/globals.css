@@ -1,0 +1,168 @@
+/* Global Styles - Maralal Safaris SACCO */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --crimson: #8B0000;
+  --gold: #FFD700;
+  --navy: #0f1932;
+  --forest: #1a6b3c;
+  --cream: #f5f5f0;
+  --text: #1a1a2e;
+  --text-light: #666;
+  --border: #e0ddd6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', 'Georgia', serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Page hero sections */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2845 60%, var(--crimson) 100%);
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,215,0,0.08) 0%, transparent 70%);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #FFD700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Section container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Gold divider */
+.gold-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--gold);
+  margin: 1rem 0 2rem;
+  border-radius: 2px;
+}
+
+/* Utility */
+.text-center { text-align: center; }
+.text-gold { color: var(--gold); }
+.text-crimson { color: var(--crimson); }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Card base */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.83rem;
+  color: #888;
+  border-bottom: 1px solid #eee;
+}
+
+.breadcrumb a {
+  color: var(--crimson);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--crimson); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a00000; }
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}

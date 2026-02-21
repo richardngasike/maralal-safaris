@@ -1,0 +1,385 @@
+.formWrapper {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.15);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.steps {
+  display: flex;
+  background: #0f1932;
+  padding: 1.5rem;
+  gap: 0;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #556;
+  font-size: 0.85rem;
+  font-family: 'Georgia', serif;
+  position: relative;
+}
+
+.step::after {
+  content: '→';
+  position: absolute;
+  right: 0;
+  color: #334;
+  font-size: 1rem;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1a2540;
+  color: #556;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  border: 2px solid #334;
+}
+
+.activeStep {
+  color: #FFD700;
+}
+
+.activeStep .stepNum {
+  background: #8B0000;
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.doneStep {
+  color: #50fa7b;
+}
+
+.doneStep .stepNum {
+  background: #1a6b3c;
+  color: white;
+  border-color: #50fa7b;
+}
+
+.form {
+  padding: 2rem;
+}
+
+.fields h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  color: #0f1932;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0ede6;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: bold;
+  color: #444;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0ddd6;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: 'Georgia', serif;
+  transition: border-color 0.2s;
+  background: #fafaf8;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #8B0000;
+  background: white;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.radio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border: 2px solid #e0ddd6;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  transition: all 0.2s;
+}
+
+.radio input {
+  width: auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.radioActive {
+  border-color: #8B0000;
+  background: #fff5f5;
+  color: #8B0000;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.payOption {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0ddd6;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-family: 'Georgia', serif;
+  transition: all 0.2s;
+}
+
+.payOption input {
+  width: auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.payActive {
+  border-color: #8B0000;
+  background: #fff5f5;
+}
+
+.btnRow {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.nextBtn, .submitBtn {
+  flex: 2;
+  background: #8B0000;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.nextBtn:hover, .submitBtn:hover {
+  background: #a00000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139,0,0,0.3);
+}
+
+.submitBtn {
+  background: #1a6b3c;
+}
+
+.submitBtn:hover {
+  background: #1f7f48;
+  box-shadow: 0 8px 25px rgba(26,107,60,0.3);
+}
+
+.backBtn {
+  flex: 1;
+  background: white;
+  color: #555;
+  border: 2px solid #ddd;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  border-color: #8B0000;
+  color: #8B0000;
+}
+
+.summary {
+  background: #f8f7f4;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #e8e4dc;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e8e4dc;
+  font-size: 0.9rem;
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+}
+
+.summaryRow span {
+  color: #888;
+}
+
+.summaryRow strong {
+  color: #222;
+}
+
+.totalRow {
+  padding-top: 0.8rem !important;
+  margin-top: 0.3rem;
+}
+
+.totalRow span {
+  color: #0f1932 !important;
+  font-weight: bold;
+  font-size: 1rem !important;
+}
+
+.totalRow strong {
+  color: #8B0000 !important;
+  font-size: 1.1rem;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.terms a {
+  color: #8B0000;
+}
+
+/* Success */
+.success {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.12);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.successIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.success h2 {
+  font-family: 'Georgia', serif;
+  color: #1a6b3c;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.success p {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.successDetails {
+  background: #f8f7f4;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.successDetails div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.88rem;
+  border-bottom: 1px solid #eee;
+}
+
+.successDetails div span:first-child {
+  color: #888;
+}
+
+.newBtn {
+  background: #8B0000;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.newBtn:hover {
+  background: #a00000;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    padding: 1rem;
+    gap: 0.3rem;
+  }
+  .step span {
+    display: none;
+  }
+  .form {
+    padding: 1.5rem;
+  }
+}

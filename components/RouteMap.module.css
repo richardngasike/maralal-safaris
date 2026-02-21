@@ -1,0 +1,131 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mapPlaceholder {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.mapSvg {
+  width: 100%;
+  display: block;
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255,215,0,0.2);
+}
+
+.mapTitle {
+  color: #FFD700;
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.routeLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: white;
+  font-size: 0.78rem;
+}
+
+.legendLine {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.routeCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.routeCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.routeCard h4 {
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.stops {
+  position: relative;
+}
+
+.stop {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.majorDot {
+  width: 14px;
+  height: 14px;
+}
+
+.stop span {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.majorStop {
+  font-weight: bold !important;
+  color: #222 !important;
+  font-size: 0.95rem !important;
+}
+
+.line {
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 2px;
+  height: 24px;
+  z-index: 0;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

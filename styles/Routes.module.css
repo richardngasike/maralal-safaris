@@ -1,0 +1,249 @@
+.routesSection {
+  background: #f5f5f0;
+  padding: 4rem 1.5rem;
+}
+
+.routesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.routeCard {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-top: 5px solid var(--route-color);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.routeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+}
+
+.routeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.routeHeader h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--route-color);
+  margin-bottom: 0.4rem;
+}
+
+.routeMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: #888;
+  flex-wrap: wrap;
+}
+
+.routeFare {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.routeFare span {
+  display: block;
+  font-size: 0.72rem;
+  color: #888;
+}
+
+.routeFare strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--route-color);
+  font-family: 'Playfair Display', serif;
+}
+
+.routeDesc {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.routeStops {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.stopsLabel {
+  font-size: 0.78rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stopChip {
+  background: #f5f5f0;
+  border: 1px solid #e0ddd6;
+  color: #555;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+}
+
+.highlights {
+  list-style: none;
+  margin-bottom: 1.2rem;
+}
+
+.highlights li {
+  font-size: 0.83rem;
+  color: #555;
+  padding: 0.2rem 0;
+  color: #1a6b3c;
+}
+
+.routeActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.bookBtn {
+  flex: 1;
+  background: var(--route-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.bookBtn:hover { opacity: 0.85; }
+
+.scheduleBtn {
+  flex: 1;
+  background: transparent;
+  color: var(--route-color);
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: 'Lora', serif;
+  border: 2px solid var(--route-color);
+  transition: all 0.2s;
+}
+
+.scheduleBtn:hover {
+  background: var(--route-color);
+  color: white;
+}
+
+/* Info Section */
+.infoSection {
+  background: white;
+  padding: 5rem 1.5rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.infoCard {
+  background: #f8f7f4;
+  border-radius: 16px;
+  padding: 1.8rem;
+  border: 1px solid #e8e4dc;
+}
+
+.infoCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #0f1932;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #8B0000;
+}
+
+.terminal {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px dashed #e0ddd6;
+}
+
+.terminal:last-child { border: none; margin: 0; padding: 0; }
+
+.terminal strong {
+  display: block;
+  color: #0f1932;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.terminal p {
+  font-size: 0.83rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.guideList {
+  list-style: none;
+}
+
+.guideList li {
+  padding: 0.45rem 0;
+  font-size: 0.85rem;
+  color: #555;
+  border-bottom: 1px solid #f0ede6;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.guideList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #8B0000;
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.contactBtn {
+  background: #8B0000;
+  color: white;
+  text-decoration: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  display: inline-block;
+  font-family: 'Lora', serif;
+  transition: background 0.2s;
+}
+
+.contactBtn:hover { background: #a00000; }
+
+@media (max-width: 900px) {
+  .routesGrid {
+    grid-template-columns: 1fr;
+  }
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}

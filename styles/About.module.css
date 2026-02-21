@@ -1,0 +1,229 @@
+.missionSection {
+  background: white;
+  padding: 5rem 1.5rem;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.missionCard {
+  background: #f8f7f4;
+  border-radius: 16px;
+  padding: 2rem;
+  border-top: 5px solid;
+  text-align: center;
+  transition: transform 0.25s;
+}
+
+.missionCard:hover { transform: translateY(-4px); }
+
+.missionIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.missionCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #0f1932;
+  margin-bottom: 0.75rem;
+}
+
+.missionCard p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Story */
+.storySection {
+  background: #f5f5f0;
+  padding: 5rem 1.5rem;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.storyGrid p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.timeline {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+
+.timeline h3 {
+  font-family: 'Playfair Display', serif;
+  color: #0f1932;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #8B0000;
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 50px 24px 1fr;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.milestoneYear {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #8B0000;
+  padding-top: 0.1rem;
+}
+
+.milestoneLine {
+  width: 2px;
+  background: #e0ddd6;
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.milestoneLine::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #8B0000;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: -3px;
+}
+
+.milestoneText {
+  font-size: 0.83rem;
+  color: #555;
+  line-height: 1.5;
+  padding-top: 0.05rem;
+}
+
+/* Team */
+.teamSection {
+  background: white;
+  padding: 5rem 1.5rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.teamCard {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: #f8f7f4;
+  border-radius: 16px;
+  transition: transform 0.25s;
+}
+
+.teamCard:hover { transform: translateY(-4px); }
+
+.teamAvatar {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #8B0000, #0f1932);
+  color: #FFD700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.teamCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #0f1932;
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  font-size: 0.82rem;
+  color: #8B0000;
+  margin-bottom: 0.2rem;
+}
+
+.since {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* Awards */
+.awards {
+  background: #0f1932;
+  padding: 5rem 1.5rem;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.awardCard {
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,215,0,0.15);
+  border-radius: 12px;
+  padding: 1.8rem;
+  transition: all 0.25s;
+}
+
+.awardCard:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+
+.awardIcon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.awardCard h3 {
+  color: #FFD700;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.awardCard p {
+  color: #778;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .awardsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .missionGrid { grid-template-columns: 1fr; }
+  .storyGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .teamGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .teamGrid { grid-template-columns: 1fr; }
+  .awardsGrid { grid-template-columns: 1fr; }
+}

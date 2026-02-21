@@ -1,0 +1,186 @@
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.statsBox {
+  display: flex;
+  gap: 2rem;
+  background: linear-gradient(135deg, #0f1932, #1a2845);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,215,0,0.15);
+}
+
+.memberStat {
+  text-align: center;
+}
+
+.memberStat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #FFD700;
+}
+
+.memberStat span {
+  font-size: 0.75rem;
+  color: #778;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.benefitCard {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  border-left: 4px solid #8B0000;
+  transition: transform 0.25s;
+}
+
+.benefitCard:hover { transform: translateY(-4px); }
+
+.benefitIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.benefitCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #0f1932;
+  margin-bottom: 0.4rem;
+}
+
+.benefitCard p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Join */
+.joinSection {
+  background: #0f1932;
+  padding: 5rem 1.5rem;
+}
+
+.joinGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.requireList {
+  list-style: none;
+}
+
+.requireList li {
+  color: #aab;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.requireList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #FFD700;
+}
+
+.requireList strong { color: white; }
+
+.applyForm {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,215,0,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.applyForm h3 {
+  color: #FFD700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus { border-color: #FFD700; }
+
+.input::placeholder { color: #556; }
+
+.input option { background: #0f1932; }
+
+.applyBtn {
+  background: #FFD700;
+  color: #0f1932;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.applyBtn:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.successCard {
+  background: rgba(26,107,60,0.2);
+  border: 1px solid rgba(80,250,123,0.3);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.successCard h3 {
+  color: #50fa7b;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.successCard p {
+  color: #aab;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .introGrid { grid-template-columns: 1fr; }
+  .statsBox { flex-wrap: wrap; justify-content: center; }
+  .benefitsGrid { grid-template-columns: 1fr 1fr; }
+  .joinGrid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 540px) {
+  .benefitsGrid { grid-template-columns: 1fr; }
+}
